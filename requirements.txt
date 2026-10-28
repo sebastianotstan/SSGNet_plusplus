@@ -1,0 +1,14 @@
+# Install torch and torchvision appropriate for HPC CUDA separately.
+# Python >=3.10; local checks used Python 3.12.
+numpy>=1.26
+Pillow>=10
+albumentations==2.0.8
+segmentation-models-pytorch==0.5.0
+timm>=0.9
+torchmetrics==1.9.0
+torch-fidelity==0.4.0
+scipy>=1.10
+opencv-contrib-python-headless>=4.9
+# Optional for *_refine, *_full, *_confidence: pydensecrf (installed separately).
+# Albumentations also depends on opencv-python-headless. These packages share cv2:
+# if JBF preflight fails, reinstall opencv-contrib-python-headless last, with --no-deps.

@@ -1,0 +1,78 @@
+{
+  "models": [
+    "fpn:efficientnet-b0",
+    "fpn:efficientnet-b1",
+    "fpn:efficientnet-b2"
+  ],
+  "multihead": true,
+  "heads": [
+    [
+      64,
+      0.1,
+      1
+    ],
+    [
+      96,
+      0.0,
+      2
+    ],
+    [
+      128,
+      0.2,
+      3
+    ]
+  ],
+  "img_size": 256,
+  "batch": 8,
+  "epochs0": 30,
+  "epochs": 20,
+  "rounds": 2,
+  "lr": 0.001,
+  "bce_weight": 0.5,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "amp": false,
+  "encoder_weights": "imagenet",
+  "fuse_mode": "logit",
+  "eval_threshold": 0.5,
+  "pseudo_threshold": 0.55,
+  "th_method": "otsu",
+  "pseudo_ratios": [
+    0.2,
+    0.4
+  ],
+  "pseudo_weights": [
+    0.099,
+    0.198
+  ],
+  "pseudo_max_count": 1000,
+  "selection": "random",
+  "select_use_raw": true,
+  "min_area": 0.002,
+  "max_area": 0.6,
+  "ent_w": 0.3,
+  "refine": "both",
+  "final_refine": "both",
+  "tk": false,
+  "tk_iters": 10,
+  "tk_fg": 0.9,
+  "tk_bg": 0.1,
+  "tk_use_xy": true,
+  "tk_xy_weight": 0.1,
+  "tk_soft": false,
+  "tk_temp": 0.1,
+  "tk_feat_norm": true,
+  "jbf_d": 7,
+  "jbf_sigma_color": 50.0,
+  "jbf_sigma_space": 7.0,
+  "crf_iters": 5,
+  "crf_sxy_gaussian": 3.0,
+  "crf_compat_gaussian": 3.0,
+  "crf_sxy_bilateral": 50.0,
+  "crf_srgb_bilateral": 10.0,
+  "crf_compat_bilateral": 5.0,
+  "deterministic": true,
+  "strict_determinism": false,
+  "loss_weighting": "legacy_batch",
+  "synthetic_limit": 0
+}

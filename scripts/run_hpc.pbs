@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Site-specific resources: adjust these PBS directives to your cluster policy.
+#PBS -l select=1:ncpus=4:mem=128gb:ngpus=1
+#PBS -l walltime=36:00:00
+#PBS -j oe
+set -euo pipefail
+cd "${PBS_O_WORKDIR:?Submit from the repository root}"
+ENV_FILE="${ENV_FILE:-scripts/hpc_env.sh}"
+if [[ ! -f "$ENV_FILE" ]]; then echo "Copy scripts/hpc_env.example.sh to scripts/hpc_env.sh and configure it." >&2; exit 2; fi
+source "$ENV_FILE"
+export MODE="${MODE:-full}" PROTOCOL="${PROTOCOL:-internal}" CONFIG="${CONFIG:-mb}" DATASET="${DATASET:-cbis}" SEED="${SEED:-42}"
+bash scripts/run_job.sh "$MODE" "$CONFIG" "$DATASET" "$SEED" "$PROTOCOL"

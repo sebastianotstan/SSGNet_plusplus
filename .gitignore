@@ -1,0 +1,17 @@
+REAL/
+SYNTH/
+new_dataset/
+external_test/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+outputs/*
+!outputs/.gitkeep
+scripts/hpc_env.sh
+*.pth
+*.pt
+*.ckpt
+*.npy

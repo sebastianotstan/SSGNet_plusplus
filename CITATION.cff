@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated SSGNet++ paper."
+title: "SSGNet++ segmentation experiment code"
+authors:
+  - family-names: Ma
+    given-names: Mosong
+  - family-names: Stathaki
+    given-names: Tania
+  - family-names: Lazarou
+    given-names: Michalis
+version: 1.0.0
+license: MIT
+date-released: 2026-10-28
+abstract: >-
+  Segmentation training, iterative pseudo-labelling, held-out evaluation,
+  optional mask refinement and paired analysis tools for SSGNet++ follow-up
+  experiments.
+keywords:
+  - medical image segmentation
+  - pseudo-labelling
+  - ensemble learning
+  - reproducibility
